@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -76,16 +77,10 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" fixedFrame="YES" text="@uniq name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-0a-Vgp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" text="@uniq name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-0a-Vgp">
                                             <rect key="frame" x="179" y="8" width="95" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.75748005319148937" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body of tweet - the text here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-fl-Q1R">
-                                            <rect key="frame" x="81" y="37" width="193" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" misplaced="YES" text="TS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxX-Td-XG2">
@@ -94,30 +89,55 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fe-ss-oqg">
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fe-ss-oqg">
                                             <rect key="frame" x="35" y="87" width="30" height="30"/>
                                             <state key="normal" title="RT"/>
                                             <connections>
                                                 <action selector="rtButton:" destination="0se-1U-GCt" eventType="touchUpInside" id="o42-4H-mtA"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-ay-Gdm">
-                                            <rect key="frame" x="81" y="87" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-ay-Gdm">
+                                            <rect key="frame" x="103" y="87" width="30" height="30"/>
                                             <state key="normal" title="FV"/>
                                             <connections>
                                                 <action selector="fvButton:" destination="0se-1U-GCt" eventType="touchUpInside" id="q7E-MI-gUq"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body of tweet - the text here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-fl-Q1R">
+                                            <rect key="frame" x="81" y="31" width="205" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq8-E9-NUl">
+                                            <rect key="frame" x="73" y="91" width="11" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCv-Xi-tvd">
+                                            <rect key="frame" x="141" y="91" width="11" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="fq8-E9-NUl" firstAttribute="leading" secondItem="3Fe-ss-oqg" secondAttribute="trailing" constant="8" id="P8b-A6-dql"/>
+                                        <constraint firstItem="CxX-Td-XG2" firstAttribute="leading" secondItem="SSI-0a-Vgp" secondAttribute="trailing" constant="25" id="Qzs-k4-tnq"/>
                                         <constraint firstAttribute="trailing" secondItem="CxX-Td-XG2" secondAttribute="trailing" constant="8" id="c33-vz-uKQ"/>
                                         <constraint firstItem="X51-hb-zaI" firstAttribute="top" secondItem="1sm-pL-TjV" secondAttribute="top" constant="8" id="d8k-s0-bzw"/>
                                         <constraint firstItem="CxX-Td-XG2" firstAttribute="top" secondItem="1sm-pL-TjV" secondAttribute="top" constant="8" id="hNM-G5-bbh"/>
                                         <constraint firstItem="X51-hb-zaI" firstAttribute="leading" secondItem="1sm-pL-TjV" secondAttribute="leading" constant="8" id="hZQ-v5-MsB"/>
+                                        <constraint firstItem="uCv-Xi-tvd" firstAttribute="leading" secondItem="vZB-ay-Gdm" secondAttribute="trailing" constant="8" id="io1-Ce-g44"/>
+                                        <constraint firstItem="3Fe-ss-oqg" firstAttribute="leading" secondItem="1sm-pL-TjV" secondAttribute="leadingMargin" constant="27" id="j60-dc-yhd"/>
+                                        <constraint firstItem="vZB-ay-Gdm" firstAttribute="leading" secondItem="3Fe-ss-oqg" secondAttribute="trailing" constant="38" id="lOU-oc-pDt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="fvTweetLabel" destination="uCv-Xi-tvd" id="Dlu-sv-dyQ"/>
                                     <outlet property="profPicImageView" destination="X51-hb-zaI" id="2Nx-2I-9pW"/>
+                                    <outlet property="reTweetLabel" destination="fq8-E9-NUl" id="R5Z-NM-tQs"/>
                                     <outlet property="timeStampLabel" destination="CxX-Td-XG2" id="1Dk-Up-2Ci"/>
                                     <outlet property="tweetBodyLabel" destination="ecM-fl-Q1R" id="l6Z-2o-XcG"/>
                                     <outlet property="uniqNameLabel" destination="SSI-0a-Vgp" id="oww-22-5xI"/>

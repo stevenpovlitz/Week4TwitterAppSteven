@@ -18,9 +18,15 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var tweetBodyLabel: UILabel!
     
-    @IBAction func rtButton(sender: AnyObject) {
+    @IBOutlet weak var reTweetLabel: UILabel!
+    @IBOutlet weak var fvTweetLabel: UILabel!
+    
+    
+    @IBAction func rtButton(sender: UIButton) {
+        reTweetLabel.text = "1"
     }
-    @IBAction func fvButton(sender: AnyObject) {
+    @IBAction func fvButton(sender: UIButton) {
+        fvTweetLabel.text = "1"
     }
     
     var indTweet: Tweet! {

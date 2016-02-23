@@ -52,7 +52,7 @@ class Tweet: NSObject {
         
         // creds for this function go to @dylan-james-smith from ccsf
         if timePassed >= 86400 {
-            timeSince = String(timePassed! / 86400)+"d"
+            timeSince = String(timePassed! / 86400)+"m"
         }
         if (3600..<86400).contains(timePassed!) {
             timeSince = String(timePassed!/3600)+"h"
