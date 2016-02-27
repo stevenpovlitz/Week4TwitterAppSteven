@@ -14,7 +14,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // go through this tutorial, might need to rearrange a bunch of stuff https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson7.html
     
-    @IBOutlet var tableViewController: UITableView!
+    @IBOutlet var tableViewCo: UITableView!
     
     @IBAction func onLogoutButton(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
@@ -22,15 +22,19 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        tableViewController.delegate = self
-        tableViewController.dataSource = self
+        tableViewCo.delegate = self
+        tableViewCo.dataSource = self
+        
+        // below 2 used so autolayout can work
+        tableViewCo.rowHeight = UITableViewAutomaticDimension
+        tableViewCo.estimatedRowHeight = 120
         
         TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
             self.tweets = tweets
-            self.tableViewController.reloadData()
-            for tweet in tweets {
-                print(tweet.text)
-            }
+            self.tableViewCo.reloadData()
+//            for tweet in tweets {
+//                //print(tweet.text)
+//            }
             
             }, failure: { (error: NSError) -> () in
                 print(error.localizedDescription)
@@ -43,7 +47,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableViewController: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableViewCo: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil{
             return tweets!.count
         } else {
@@ -52,7 +56,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableViewController.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        let cell = tableViewCo.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
         
         cell.selectionStyle = .None
         cell.indTweet = tweets![indexPath.row]
@@ -61,7 +65,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let cell = sender as! UITableViewCell
-        let indexPath = tableViewController.indexPathForCell(cell)
+        let indexPath = tableViewCo.indexPathForCell(cell)
         let tweet = tweets![indexPath!.row]
         let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
         tweetDetailViewController.tweet = tweet

@@ -41,7 +41,7 @@ class TweetCell: UITableViewCell {
             
             userNameLabel.text = indTweet.user?.name as? String
             uniqNameLabel.text = "@\(indTweet.user!.screenname!)"
-            tweetBodyLabel.text = indTweet.text as! String
+            tweetBodyLabel.text = indTweet.text as? String
             timeStampLabel.text = indTweet.timeSince
             
         }
