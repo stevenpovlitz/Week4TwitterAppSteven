@@ -27,8 +27,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // below 2 used so autolayout can work
         
-//        tableViewCo.rowHeight = UITableViewAutomaticDimension
-        tableViewCo.rowHeight = 120
+        //tableViewCo.rowHeight = UITableViewAutomaticDimension
+        tableViewCo.rowHeight = 140
         tableViewCo.estimatedRowHeight = 120
         
         TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
