@@ -11,10 +11,11 @@ import UIKit
 class TweetDetailViewController: UIViewController {
     
     var tweet: Tweet!
+    var userName: String?
     
     @IBOutlet weak var profPicImageView: UIImageView!
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel! // problem outlet
     
     @IBOutlet weak var uniqNameLabel: UILabel!
     
@@ -26,18 +27,20 @@ class TweetDetailViewController: UIViewController {
     
     @IBOutlet weak var numFavorites: UILabel!
     
-    @IBOutlet weak var replyButton: UIButton!
-    
-    @IBOutlet weak var retweetButton: UIButton!
-    
-    @IBOutlet weak var favoriteButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //print(tweet)
+        profPicImageView.setImageWithURL((tweet.user?.profileUrl)!)
         
-        userNameLabel.text = ("\(tweet.screenName)")
+        uniqNameLabel.text = "@\(tweet.user!.screenname!)"
+        tweetBodyLabel.text = tweet.text as? String
+        timeStampLabel.text = tweet.timeSince
+        
+        print (userName)
+        userNameLabel.text = userName
+        
+        //userNameLabel.text = ("\(tweet.screenName)")
         // Do any additional setup after loading the view.
     }
 
@@ -45,5 +48,25 @@ class TweetDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func replyButtonAction(sender: AnyObject) {
+        print("Reply Button Pressed")
+        //TODO: Implement Reply button
+    }
+    
+    @IBAction func retweetButtonAction(sender: AnyObject) {
+        print("Retweet Button Pressed")
+        //TODO: Implement Retweet button
+    }
+    
+    @IBAction func favoriteButtonAction(sender: AnyObject) {
+        TwitterClient.sharedInstance.favorite(tweet.tweetID!, success: { (Tweet) -> () in
+            print("favorited")
+// increment a favorites label here
+            }) { (error: NSError) -> () in
+                print(error.localizedDescription)
+        }
+    }
+    
 
 }

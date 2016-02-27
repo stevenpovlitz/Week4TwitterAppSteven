@@ -70,8 +70,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let indexPath = tableViewCo.indexPathForCell(cell)
         let tweet = tweets![indexPath!.row]
         let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
+
+        tweetDetailViewController.userName = tweet.name
+        
         tweetDetailViewController.tweet = tweet
-        print (tweet)
     }
 
 

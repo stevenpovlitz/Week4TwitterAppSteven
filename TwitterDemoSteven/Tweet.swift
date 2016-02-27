@@ -21,6 +21,7 @@ class Tweet: NSObject {
     var name: String?
     var timeSince: String?
     var timePassed: Int?
+    var tweetID: String?
     
     //a user
     var user: User?
@@ -39,6 +40,8 @@ class Tweet: NSObject {
         userProfPic = dictionary["profile_image_url_https"] as? NSURL
         screenName = dictionary["screen_name"] as? String
         name = dictionary["name"] as? String
+        
+        tweetID = dictionary["id_str"] as? String;
         
         let timestampString = dictionary["created_at"] as? String
         

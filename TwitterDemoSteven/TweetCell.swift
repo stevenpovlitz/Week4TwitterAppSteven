@@ -23,14 +23,18 @@ class TweetCell: UITableViewCell {
     
     
     @IBAction func rtButton(sender: UIButton) {
-        reTweetLabel.text = "1"
+        
     }
     @IBAction func fvButton(sender: UIButton) {
-        fvTweetLabel.text = "1"
+        
     }
     
     var indTweet: Tweet! {
         didSet{
+            // incase I want to use them later
+            reTweetLabel.hidden = true
+            fvTweetLabel.hidden = true
+
             // set outlets to values (ex nameLabel.text = indTweet.text
             
             profPicImageView.setImageWithURL((indTweet.user?.profileUrl)!)
