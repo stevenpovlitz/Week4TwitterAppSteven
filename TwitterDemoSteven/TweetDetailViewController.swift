@@ -68,5 +68,10 @@ class TweetDetailViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let composeViewController = segue.destinationViewController as! ComposeViewController
+        print(self.tweet.screenName)
+        composeViewController.tweet = self.tweet
+    }
 
 }

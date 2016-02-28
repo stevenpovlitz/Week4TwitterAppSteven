@@ -27,9 +27,10 @@ class ComposeViewController: UIViewController {
         
         self.centerTextField.text = "What's on your mind?"
         
-        if tweet != nil {
-            //self.centerTextField.text = "@\(tweet!.name! as? String)"
-        }
+//        if tweet != nil {
+//            // below line generated "unexpectedly found nil while unwrapping an Optional value"
+//            self.centerTextField.text = "@\(tweet?.screenName as String?)"
+//        }
         
     }
     
