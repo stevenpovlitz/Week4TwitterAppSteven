@@ -1,13 +1,42 @@
 //
 //  ComposeViewController.swift
-//  TwitterDemoSteven
+//  
 //
 //  Created by Steven Povlitz on 2/27/16.
-//  Copyright © 2016 Steven Povlitz. All rights reserved.
+//
 //
 
-import Cocoa
+import UIKit
 
-class ComposeViewController: UITableViewCell {
+class ComposeViewController: UIViewController {
+    
+    var tweet: Tweet?
+    
+    @IBOutlet weak var centerTextField: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.centerTextField.text = "What's on your mind?"
+        
+        if tweet != nil {
+            //self.centerTextField.text = "@\(tweet!.name! as? String)"
+        }
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func postTweetButton(sender: AnyObject) {
+        TwitterClient.sharedInstance.compose(self.centerTextField.text, success: { (Tweet) -> () in
+            }) { (error: NSError) -> () in
+                print(error.localizedDescription)
+        }
+        self.navigationController!.popViewControllerAnimated(true)
+        
+    }
+    
 
 }
