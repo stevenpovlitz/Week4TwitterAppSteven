@@ -113,11 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				B0ACA2DE1C82A32500D6C100 /* ComposeViewController.swift */,
+				B0F640B81C837AE50006572C /* ProfileViewController.swift */,
 				B07E665C1C7FDB41007B100C /* TweetDetailViewController.swift */,
 				B0DBB4321C792B5200E3B291 /* LoginViewController.swift */,
 				B0EE568E1C7AA7D100EF8252 /* TweetsViewController.swift */,
 				B0F4F1741C7AE07600C8D19F /* TweetCell.swift */,
-				B0F640B81C837AE50006572C /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

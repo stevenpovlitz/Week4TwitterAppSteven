@@ -62,7 +62,19 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.selectionStyle = .None
         cell.indTweet = tweets![indexPath.row]
+        
+        cell.profPicImageView.userInteractionEnabled = true
+        
+        let tapped = UITapGestureRecognizer(target: self, action: "profPicImageAction:")
+        tapped.numberOfTapsRequired = 1
+        cell.profPicImageView.addGestureRecognizer(tapped)
+        
         return cell
+    }
+    
+    func profPicImageAction(gesture: UITapGestureRecognizer) {
+        performSegueWithIdentifier("profilePic", sender: nil)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -76,6 +88,20 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             tweetDetailViewController.tweet = tweet
         }
+        
+//        else if (false) {
+//            
+//            let cell = sender as! UIBarButtonItem
+//            let indexPath = tableViewCo.indexPathForCell(cell)
+//            let tweet = tweets![indexPath!.row]
+//            let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
+//            
+//            tweetDetailViewController.userName = tweet.name
+//            
+//            tweetDetailViewController.tweet = tweet
+//            
+//        }
+        
     }
 
 

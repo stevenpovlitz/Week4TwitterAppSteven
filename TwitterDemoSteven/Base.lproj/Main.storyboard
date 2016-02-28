@@ -188,7 +188,7 @@
                             </barButtonItem>
                             <barButtonItem title="Profile" id="d6P-Mn-URi">
                                 <connections>
-                                    <segue destination="NTb-Tj-gbM" kind="push" id="3ra-qv-Gee"/>
+                                    <segue destination="NTb-Tj-gbM" kind="push" identifier="profilePic" id="3ra-qv-Gee"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -429,7 +429,7 @@
         <!--Profile View Controller-->
         <scene sceneID="phh-Eh-uQe">
             <objects>
-                <viewController id="NTb-Tj-gbM" customClass="ProfileViewController" customModule="TwitterDemoSteven" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userProfile" id="NTb-Tj-gbM" customClass="ProfileViewController" customModule="TwitterDemoSteven" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ELU-fq-7uF"/>
                         <viewControllerLayoutGuide type="bottom" id="qVH-fz-eHv"/>

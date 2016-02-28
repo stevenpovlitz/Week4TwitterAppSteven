@@ -30,17 +30,16 @@ class TweetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //print(tweet)
         profPicImageView.setImageWithURL((tweet.user?.profileUrl)!)
-        
-        uniqNameLabel.text = "@\(tweet.user!.screenname!)"
+        userNameLabel.text = tweet.screenName
+        uniqNameLabel.text = tweet.user!.screenname! as? String
         tweetBodyLabel.text = tweet.text as? String
         timeStampLabel.text = tweet.timeSince
-        
-        print (userName)
         userNameLabel.text = userName
         
-        //userNameLabel.text = ("\(tweet.screenName)")
+        profPicImageView.setImageWithURL(tweet.userProfPic! as NSURL)
+        profPicImageView.layer.cornerRadius = 4
+        
         // Do any additional setup after loading the view.
     }
 
